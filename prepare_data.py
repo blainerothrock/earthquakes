@@ -28,9 +28,8 @@ def process_file(earthquake_file, directory, target_directory, label):
     save_file(
         os.path.join(
             target_directory, 
-            '%s_%s_%s.p' % (label, data_dict['name'], 
-            earthquake_file)
-            ), 
+            '%s_%s_%s.p' % (label, data_dict['name'], earthquake_file)
+        ),
         data_dict
     )
 

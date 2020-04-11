@@ -1,3 +1,6 @@
+models/
+notebooks/
+
 .cache
 popper
 .cache
