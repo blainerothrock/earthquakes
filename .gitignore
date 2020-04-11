@@ -1,5 +1,5 @@
-models/*
-notebooks/*
+models/
+notebooks/
 
 .cache
 popper

@@ -37,6 +37,8 @@ with open(os.path.join(args.output_directory, 'args.json'), 'r') as f:
 
 args = Namespace(**args)
 
+print(args.dataset_directory)
+
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 dataset = EarthquakeDataset(folder=args.dataset_directory,
                             transforms=args.transforms,
@@ -103,7 +105,7 @@ try:
     cm = ConfusionMatrix(predict_vector=predictions, actual_vector=ground_truth)
     results = str(cm)
 except:
-    results = str(sum(predictions == ground_truth) / len(ground_truth))
+    results = 'results: %s' % str(sum(predictions == ground_truth) / len(ground_truth))
 
 with open(os.path.join(args.output_directory, 'results.txt'), 'w') as f:
     f.write(results)
